@@ -7,6 +7,10 @@ public class Parking {
         this.carId = carId;
     }
 
+    public String getCarId() {
+        return carId;
+    }
+
     public String getVoucher() {
         return this.spaceNumber + "-" + this.carId;
     }

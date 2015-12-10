@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ParkingLot {
     private final int space;
@@ -16,5 +18,13 @@ public class ParkingLot {
             return parking.getVoucher();
         }
         return null;
+    }
+
+    public String pickupCar(String voucher) {
+        Parking parking = parkings.stream()
+                .filter((p) -> Objects.equals(p.getVoucher(), voucher))
+                .collect(Collectors.toList())
+                .get(0);
+        return parking.getCarId();
     }
 }

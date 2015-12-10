@@ -19,4 +19,12 @@ public class ParkingLotTest {
         String voucher = parkingLot.parkCar("AAA12");
         assertThat(voucher, isEmptyOrNullString());
     }
+    
+    @Test
+    public void shouldPickupByVoucher() {
+        ParkingLot parkingLot = new ParkingLot(10);
+        String voucher = parkingLot.parkCar("AAA11");
+        String carId = parkingLot.pickupCar(voucher);
+        assertThat(carId, is("AAA11"));
+    }
 }
