@@ -8,14 +8,14 @@ import static org.hamcrest.Matchers.is;
 
 public class ParkingLotManagerTest {
     @Test
-    public void shouldManagerPark3Cars() {
+    public void shouldManagerPark2Cars() {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(new ParkingLot(10)));
         ParkingLotManager manager = new ParkingLotManager(parkingLots);
-        String voucher1 = manager.parkCar("AAA11");
-        String voucher2 = manager.parkCar("AAA22");
-        String voucher3 = manager.parkCar("AAA33");
-        assertThat(voucher1, is("0-AAA11"));
-        assertThat(voucher2, is("1-AAA22"));
-        assertThat(voucher3, is("2-AAA33"));
+        Parking parking1 = manager.parkCar("AAA11");
+        Parking parking2 = manager.parkCar("AAA22");
+        assertThat(parking1.carId, is("AAA11"));
+        assertThat(parking1.spaceNumber, is("0"));
+        assertThat(parking2.carId, is("AAA22"));
+        assertThat(parking2.spaceNumber, is("1"));
     }
 }

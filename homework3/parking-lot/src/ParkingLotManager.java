@@ -9,7 +9,7 @@ public class ParkingLotManager {
         this.parkingLots = parkingLots;
     }
 
-    public String parkCar(String carId) {
+    public Parking parkCar(String carId) {
         List<ParkingLot> availableParkingLots = 
                 this.parkingLots
                 .stream()
