@@ -21,10 +21,9 @@ public class ParkingLot {
     }
 
     public String pickupCar(String voucher) {
-        Parking parking = parkings.stream()
+        List<Parking> parkingList = parkings.stream()
                 .filter((p) -> Objects.equals(p.getVoucher(), voucher))
-                .collect(Collectors.toList())
-                .get(0);
-        return parking.getCarId();
+                .collect(Collectors.toList());
+        return parkingList.isEmpty() ? null : parkingList.get(0).getCarId();
     }
 }

@@ -27,4 +27,12 @@ public class ParkingLotTest {
         String carId = parkingLot.pickupCar(voucher);
         assertThat(carId, is("AAA11"));
     }
+
+    @Test
+    public void shouldNotPickupWhenVoucherIsInvalid() {
+        ParkingLot parkingLot = new ParkingLot(10);
+        parkingLot.parkCar("AAA11");
+        String carId = parkingLot.pickupCar("BBB22");
+        assertThat(carId, isEmptyOrNullString());
+    }
 }
