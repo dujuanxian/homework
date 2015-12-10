@@ -5,15 +5,17 @@ import java.util.stream.Collectors;
 
 public class ParkingLot {
     private final int space;
-    private List<Parking<String, String>> parkings = new ArrayList<>();
+    private final String number;
+    private List<Parking<String, String, String>> parkings = new ArrayList<>();
 
-    public ParkingLot(int space) {
+    public ParkingLot(int space, String number) {
         this.space = space;
+        this.number = number;
     }
 
     public Parking parkCar(String carId) {
         if (hasSpace()) {
-            Parking parking = new Parking(carId, String.valueOf(parkings.size()));
+            Parking parking = new Parking(carId, String.valueOf(parkings.size()), number);
             this.parkings.add(parking);
             return parking;
         }
