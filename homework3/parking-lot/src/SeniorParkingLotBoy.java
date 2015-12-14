@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class SeniorParkingLotBoy extends ParkingLotBoy{
@@ -9,15 +8,7 @@ public class SeniorParkingLotBoy extends ParkingLotBoy{
 
     @Override
     protected List<ParkingLot> getAvailableParkingLots() {
-        this.parkingLots.sort(new Comparator<ParkingLot>() {
-            @Override
-            public int compare(ParkingLot o1, ParkingLot o2) {
-                if (o1.getSpace() < o2.getSpace()) {
-                    return 1;
-                }
-                return -1;
-            }
-        });
+        this.parkingLots.sort((p1, p2) -> p2.getSpace() - p1.getSpace());
         return this.parkingLots;
     }
 }

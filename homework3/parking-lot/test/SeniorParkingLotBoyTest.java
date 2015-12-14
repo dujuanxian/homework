@@ -15,7 +15,7 @@ public class SeniorParkingLotBoyTest {
         ArrayList<ParkingLot> parkingLots = 
                 new ArrayList<>(Arrays.asList(parkingLot1, parkingLot2));
 
-        SeniorParkingLotBoy manager = new SeniorParkingLotBoy(parkingLots);
+        ParkingLotBoy manager = new SeniorParkingLotBoy(parkingLots);
         Parking parking1 = manager.parkCar("AAA11");
         Parking parking2 = manager.parkCar("AAA22");
         

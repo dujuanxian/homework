@@ -10,7 +10,7 @@ public class JuniorParkingLotBoyTest {
     @Test
     public void shouldManagerPark2Cars() {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(new ParkingLot(10, "lot-1")));
-        JuniorParkingLotBoy manager = new JuniorParkingLotBoy(parkingLots);
+        ParkingLotBoy manager = new JuniorParkingLotBoy(parkingLots);
         Parking parking1 = manager.parkCar("AAA11");
         Parking parking2 = manager.parkCar("AAA22");
         assertThat(parking1.carId, is("AAA11"));
@@ -29,7 +29,7 @@ public class JuniorParkingLotBoyTest {
         ArrayList<ParkingLot> parkingLots = 
                 new ArrayList<>(Arrays.asList(parkingLot1, parkingLot2));
         
-        JuniorParkingLotBoy manager = new JuniorParkingLotBoy(parkingLots);
+        ParkingLotBoy manager = new JuniorParkingLotBoy(parkingLots);
         Parking parking1 = manager.parkCar("AAA11");
         Parking parking2 = manager.parkCar("AAA22");
         
