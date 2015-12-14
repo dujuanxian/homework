@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeadParkingLotBoy extends ParkingLotBoy {
-    public LeadParkingLotBoy(ArrayList<ParkingLot> parkingLots) {
+public class LeadParkingBoy extends ParkingBoy {
+    public LeadParkingBoy(ArrayList<ParkingLot> parkingLots) {
         super(parkingLots);
     }
 

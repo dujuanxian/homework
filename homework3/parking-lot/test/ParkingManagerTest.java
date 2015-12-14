@@ -12,17 +12,13 @@ public class ParkingManagerTest {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(
                 new ParkingLot(1, "lot-1"),
                 new ParkingLot(5, "lot-2")));
-        ParkingLotBoy parkingLotBoy = new JuniorParkingLotBoy(parkingLots);
-        ParkingManager parkingManager = new ParkingManager(parkingLotBoy);
 
+        ParkingManager parkingManager = new ParkingManager(
+                new JuniorParkingBoy(parkingLots));
         Parking parking1 = parkingManager.parkCar("AAA11");
         Parking parking2 = parkingManager.parkCar("AAA22");
         
-        assertThat(parking1.carId, is("AAA11"));
-        assertThat(parking1.spaceNumber, is("0"));
-        assertThat(parking1.parkingLotNumber, is("lot-1"));
-        assertThat(parking2.carId, is("AAA22"));
-        assertThat(parking2.spaceNumber, is("0"));
-        assertThat(parking2.parkingLotNumber, is("lot-2"));
+        assertThat(parking1, is(new Parking("AAA11", "0", "lot-1")));
+        assertThat(parking2, is(new Parking("AAA22", "0", "lot-2")));
     }
 }

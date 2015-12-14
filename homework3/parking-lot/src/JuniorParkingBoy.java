@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class JuniorParkingLotBoy extends ParkingLotBoy{
-    public JuniorParkingLotBoy(ArrayList<ParkingLot> parkingLots) {
+public class JuniorParkingBoy extends ParkingBoy {
+    public JuniorParkingBoy(ArrayList<ParkingLot> parkingLots) {
         super(parkingLots);
     }
 

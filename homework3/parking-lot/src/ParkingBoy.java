@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ParkingLotBoy {
+public abstract class ParkingBoy {
     protected final ArrayList<ParkingLot> parkingLots;
 
-    protected ParkingLotBoy(ArrayList<ParkingLot> parkingLots) {
+    protected ParkingBoy(ArrayList<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
     }
 

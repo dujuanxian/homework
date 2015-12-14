@@ -1,11 +1,11 @@
 public class ParkingManager {
-    private final ParkingLotBoy parkingLotBoy;
+    private final ParkingBoy parkingBoy;
 
-    public ParkingManager(ParkingLotBoy parkingLotBoy) {
-        this.parkingLotBoy = parkingLotBoy;
+    public ParkingManager(ParkingBoy parkingBoy) {
+        this.parkingBoy = parkingBoy;
     }
 
     public Parking parkCar(String carId) {
-        return this.parkingLotBoy.parkCar(carId);
+        return this.parkingBoy.parkCar(carId);
     }
 }
