@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ParkingLotManager {
+public class ParkingLotBoy {
     private final ArrayList<ParkingLot> parkingLots;
 
-    public ParkingLotManager(ArrayList<ParkingLot> parkingLots) {
+    public ParkingLotBoy(ArrayList<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
     }
 

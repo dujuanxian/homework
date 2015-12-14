@@ -6,11 +6,11 @@ import java.util.Arrays;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public class ParkingLotManagerTest {
+public class ParkingLotBoyTest {
     @Test
     public void shouldManagerPark2Cars() {
         ArrayList<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(new ParkingLot(10, "lot-1")));
-        ParkingLotManager manager = new ParkingLotManager(parkingLots);
+        ParkingLotBoy manager = new ParkingLotBoy(parkingLots);
         Parking parking1 = manager.parkCar("AAA11");
         Parking parking2 = manager.parkCar("AAA22");
         assertThat(parking1.carId, is("AAA11"));
@@ -29,7 +29,7 @@ public class ParkingLotManagerTest {
         ArrayList<ParkingLot> parkingLots = 
                 new ArrayList<>(Arrays.asList(parkingLot1, parkingLot2));
         
-        ParkingLotManager manager = new ParkingLotManager(parkingLots);
+        ParkingLotBoy manager = new ParkingLotBoy(parkingLots);
         Parking parking1 = manager.parkCar("AAA11");
         Parking parking2 = manager.parkCar("AAA22");
         
