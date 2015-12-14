@@ -33,7 +33,11 @@ public class ParkingLot {
         return parkings.size() < space;
     }
 
-    public int getSpace() {
-        return space;
+    public int getAvailableSpace() {
+        return space - parkings.size();
+    }
+
+    public double getSpaceVacancyRate() {
+        return (space - parkings.size()) / (double)space;
     }
 }
