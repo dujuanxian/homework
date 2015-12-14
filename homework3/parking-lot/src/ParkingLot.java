@@ -32,4 +32,8 @@ public class ParkingLot {
     public boolean hasSpace() {
         return parkings.size() < space;
     }
+
+    public int getSpace() {
+        return space;
+    }
 }

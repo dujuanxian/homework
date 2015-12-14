@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.nullValue;
 
 public class ParkingLotTest {
 
-    private ParkingLot parkingLot = new ParkingLot(10, "Lot-1");
+    private ParkingLot parkingLot = new ParkingLot(1, "Lot-1");
 
     @Test
     public void shouldParkCarWhenParkingLotHasSpace() throws Exception {
