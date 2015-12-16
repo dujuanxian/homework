@@ -13,6 +13,17 @@ public class ParkingManager {
         return getAvailableParkingBoys().get(0).parkCar(carId);
     }
 
+    public String pickupCar(Parking parking) {
+        String carId = null;
+        for(ParkingBoy parkingBoy : this.parkingBoys) {
+            String result = parkingBoy.pickupCar(parking);
+            if (result != null) {
+                carId = result;
+            }
+        }
+        return carId;
+    }
+
     protected List<ParkingBoy> getAvailableParkingBoys() {
         return this.parkingBoys
                 .stream()

@@ -23,4 +23,12 @@ public class Parking<A, B, C> {
 
         return true;
     }
+
+    public A getCarId() {
+        return carId;
+    }
+
+    public C getParkingLotNumber() {
+        return parkingLotNumber;
+    }
 }

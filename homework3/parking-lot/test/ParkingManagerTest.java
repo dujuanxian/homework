@@ -43,4 +43,26 @@ public class ParkingManagerTest {
         assertThat(parking2, is(new Parking("AAA22", "0", "lot-3")));
         assertThat(parking3, is(new Parking("AAA33", "1", "lot-3")));
     }
+
+    @Test
+    public void shouldParkingManagerGetCarsByMultipleParkingLotBoys() {
+        ArrayList<ParkingLot> parkingLots1 = new ArrayList<>(Arrays.asList(
+                new ParkingLot(1, "lot-1")));
+        ArrayList<ParkingLot> parkingLots2 = new ArrayList<>(Arrays.asList(
+                new ParkingLot(1, "lot-2"),
+                new ParkingLot(5, "lot-3")));
+
+        ParkingManager parkingManager = new ParkingManager(
+                new ArrayList<>(Arrays.asList(
+                    new JuniorParkingBoy(parkingLots1),
+                    new SeniorParkingBoy(parkingLots2))));
+        
+        Parking parking1 = parkingManager.parkCar("AAA11");
+        Parking parking2 = parkingManager.parkCar("AAA22");
+        Parking parking3 = parkingManager.parkCar("AAA33");
+
+        assertThat(parkingManager.pickupCar(parking2), is("AAA22"));
+        assertThat(parkingManager.pickupCar(parking1), is("AAA11"));
+        assertThat(parkingManager.pickupCar(parking3), is("AAA33"));
+    }
 }

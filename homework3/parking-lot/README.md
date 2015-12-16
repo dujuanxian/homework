@@ -22,3 +22,4 @@
 
 * ParkingManager可以让ParkingBoy停多辆车
 * ParkingManager可以让多个ParkingBoy停多辆车
+* ParkingManager可以让多个ParkingBoy取车

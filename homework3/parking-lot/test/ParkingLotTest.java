@@ -26,14 +26,14 @@ public class ParkingLotTest {
     @Test
     public void shouldPickupByVoucher() {
         Parking parking = parkingLot.parkCar("AAA11");
-        String carId = parkingLot.pickupCar((String) parking.carId);
+        String carId = parkingLot.pickupCar(parking);
         assertThat(carId, is("AAA11"));
     }
 
     @Test
     public void shouldNotPickupWhenVoucherIsInvalid() {
         parkingLot.parkCar("AAA11");
-        String carId = parkingLot.pickupCar("BBB22");
+        String carId = parkingLot.pickupCar(new Parking("BBB22", null, null));
         assertThat(carId, isEmptyOrNullString());
     }
 }

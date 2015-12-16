@@ -13,6 +13,10 @@ public class ParkingLot {
         this.number = number;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
     public Parking parkCar(String carId) {
         if (hasSpace()) {
             Parking parking = new Parking(carId, String.valueOf(parkings.size()), number);
@@ -22,9 +26,9 @@ public class ParkingLot {
         return null;
     }
 
-    public String pickupCar(String carId) {
+    public String pickupCar(Parking parking) {
         List<Parking> parkingList = parkings.stream()
-                .filter((p) -> Objects.equals(p.carId, carId))
+                .filter((p) -> Objects.equals(p.carId, parking.getCarId()))
                 .collect(Collectors.toList());
         return parkingList.isEmpty() ? null : (String) parkingList.get(0).carId;
     }
