@@ -1,0 +1,18 @@
+buildscript {
+    repositories {
+        maven {
+            url "http://dl.bintray.com/greghaskins/maven"
+        }
+    }
+}
+repositories {
+    maven {
+        url "http://dl.bintray.com/greghaskins/maven"
+        mavenCentral()
+    }
+}
+apply plugin: 'java'
+
+dependencies {
+    testCompile group: 'com.greghaskins', name: 'spectrum', version: '0.4.4'
+}
